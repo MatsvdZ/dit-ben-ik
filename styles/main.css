@@ -1,4 +1,58 @@
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+
 * {
-    padding:0;
-    margin:0;
- }
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Font */
+  --font-main: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Font sizes */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-xl: 2rem; /* 32px */
+  --fs-xxl: 2.75rem; /* 44px */
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Kleuren */
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-bg: #ffffff;
+  --color-primary: #4f46e5;
+
+  /* Spacing schaal */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
