@@ -9,7 +9,7 @@
 
 :root {
   /* Font */
-  --font-main: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* Font sizes */
   --fs-xs: 0.75rem; /* 12px */
