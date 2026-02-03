@@ -5,6 +5,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -55,4 +56,15 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
+}
+
+/*****************/
+/* IMAGE STYLING */
+/*****************/
+
+img {
+  max-width: auto;
+  height: 20vh;
+  transform: scaleX(-1);
+
 }
