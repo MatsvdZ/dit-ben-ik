@@ -13,3 +13,13 @@ Ik heb op dit moment nog niks geleerd, maar daar komt natuurlijk wel verandering
 Ik ga morgen gewoon lekker beginnen met mijn project coderen. Ik wil in ieder geval al een sterke basis neerzetten en eventueel alvast beginnen met het kijken naar eventuele animaties. Ook hebben we al meteen de eerste workshops op de planning. Ik ga scroll driven animations volgen, en ik hoop dit ook te kunnen gebruiken voor mijn eigen project.
 
 ## Voortgang week 1
+
+
+## Bronnen
+
+https://stackoverflow.com/questions/27123399/how-to-move-an-image-up-and-down-smoothly-with-css
+
+https://codepen.io/collection/EPWkPM
+
+https://www.youtube.com/watch?v=WRxUWqy1Wkw
+

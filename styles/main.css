@@ -49,15 +49,6 @@
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-body {
-  font-family: var(--font-main);
-  font-size: var(--fs-base);
-  font-weight: var(--fw-regular);
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
-
 /*****************/
 /* IMAGE STYLING */
 /*****************/
@@ -65,6 +56,39 @@ body {
 img {
   max-width: auto;
   height: 20vh;
-  transform: scaleX(-1);
+}
 
+/**************************/
+/* KEYFRAMES / ANIMATIONS */
+/**************************/
+
+.route {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600/200;
+  display: block;
+}
+
+.container {
+  position: relative;
+  width: min(900px 100%);
+  margin: 0 auto;
+}
+
+.container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  offset-path: path(
+    "M 341 9.671875 C 385 33.671875, 258 139.671875, 346 184.671875"
+  );
+  offset-distance: 0%;
+  animation: sail 5s linear infinite;
+}
+
+@keyframes sail {
+  to {
+    offset-distance: 100%;
+  }
 }
