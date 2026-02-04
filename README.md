@@ -29,6 +29,8 @@ Ik heb een andere manier van API structuur gezien en geleerd. Dit is wel leuk om
 
 Ook heb ik gebruik gemaakt van de workshops door meteen te oefenen met de keyframes, door een image een bepaalde path te laten volgen.
 
+### Wat ga ik morgen doen?
+Ik ga morgen beginnen met het verder coderen en oefenen met het laten bewegen van mijn img, en ik ga ook proberen een basis site nee te zetten, zodat ik voor vrijdag iets heb om te laten zien.
 
 
 
