@@ -32,6 +32,27 @@ Ook heb ik gebruik gemaakt van de workshops door meteen te oefenen met de keyfra
 ### Wat ga ik morgen doen?
 Ik ga morgen beginnen met het verder coderen en oefenen met het laten bewegen van mijn img, en ik ga ook proberen een basis site nee te zetten, zodat ik voor vrijdag iets heb om te laten zien.
 
+## Derde checkout (05-02)
+
+### Wat heb ik gedaan?
+Ik heb een start gemaakt met het echt vormgeven van mijn site. 
+
+Ik heb hem horizontaal scrollbaar gemaakt, en een backgrond toegevoegd die soepel in elkaar overloopt, wat een soort continu effect geeft aan de achtergrond.
+
+Ook heb ik een soort neon sign met mijn naam die ik uit de API haal. Deze heeft een nog niet werkende knop waar je op kunt klikken, om zo naar de volgende 'pagina' te gaan.
+
+### Hoe lang duurde het?
+Ik was er deze les iets later bij, dus ik heb in totaal effectief zo'n drie uur kunnen werken aan mijn project. 
+
+###  Wat heb ik geleerd?
+Ik heb geleerd hoe een horizontal scroll werkt, en hoe dit voor alle browser er goed uitziet.
+
+Ik heb geleerd hoe ik blur, kleur en shadows kan gebruiken om grappige effecten te geven aan tekst en dergelijke.
+
+### Wat ga ik morgen doen?
+Ik ga morgen voor de eerste versie presentaties, nog een paar kleine details toevoegen om zo mijn eerste versie te tonen.
+
+Ik wil alvast wat meer van de data over mijzelf op de pagina tonen, en ik wil kijken of ik de knop alvast werkend kan maken.
 
 
 
