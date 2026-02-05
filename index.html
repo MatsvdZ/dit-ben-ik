@@ -8,18 +8,45 @@
   </head>
   <body>
     <main>
-      <article>
+      <div class="outer-wrapper">
+        <div class="wrapper">
+          <section class="slide">
+            <div class="game-board">
+              <h1 class="player-name neonText">
+                <span data-field="name"></span>
+              </h1>
+              <button class="start-button neonText">Ready to ride</button>
+            </div>
+            <img src="assets/img/motor.png" alt="Ik op de motor" />
+          </section>
+          <section class="slide"></section>
+          <section class="slide"></section>
+        </div>
+      </div>
+
+      <!-- <section>
+        <div class="game-board">
+          <h1 class="player-name neonText"><span data-field="name"></span></h1>
+          <button class="start-button neonText">Ready to ride</button>
+        </div>
+      </section> -->
+
+      <!-- <article>
         <h2 data-field="name"></h2>
         <p data-field="nickname"></p>
         <p>Bio: <span data-field="bio"></span></p>
         <p>Birthday: <span data-field="birthdate"></span></p>
         <p>GitHub: <span data-field="github_handle"></span></p>
-      </article>
+        <p>Avatar: <span data-field="avatar"></span></p>
+        <p>
+          Website:
+          <a href="https://matsvdz.github.io/portfolio/"
+            ><span data-field="website"></span
+          ></a>
+        </p>
+      </article> -->
+      <!-- <img src="assets/img/motor.png" alt="Ik op de motor" /> -->
     </main>
-
-    <img src="images/motor.png" alt="Ik op de motor" />
-
-
 
     <script src="server.js"></script>
   </body>

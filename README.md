@@ -52,3 +52,8 @@ https://codepen.io/collection/EPWkPM
 
 https://www.youtube.com/watch?v=WRxUWqy1Wkw
 
+https://css-tricks.com/how-to-create-neon-text-with-css/
+
+https://www.youtube.com/watch?v=n-9drcPkpZg
+
+https://www.youtube.com/watch?v=OeaHnxahf40
