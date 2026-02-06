@@ -58,6 +58,45 @@ Ik wil alvast wat meer van de data over mijzelf op de pagina tonen, en ik wil ki
 
 ## Voortgang week 1
 
+### Ontwerp
+In deze week ben ik langs verschillende ideeën gelopen en heb ik mijn design helemaal omgegooid. Zo ben ik van een soort landscape naar een soort 'Tron' omgeving (Tron is een filmreeks mocht je dit niet weten :)). Ik heb dit veranderd omdat ik erachter kwam dat dit toch niet helemaal de kant was waar ik op wou gaan. 
+
+Ik ben voor het Tron achtige ontwerp gegaan omdat dit wat meer past bij wat ik graag wil laten zien en wie ik ben. Ook denk ik dat ik met deze vormgeving meer kan doen met animaties en dergelijke. Ik had graag eerder willen beginnen met echt animeren, maar nu met deze sterke basis denk ik dat dit wat makkelijker zal gaan.
+
+Hieronder zie je hoe ik het had, en hoe het er nu uitziet:
+
+**Before:**
+
+<img width="1728" height="963" alt="Screenshot 2026-02-06 at 11 58 41" src="https://github.com/user-attachments/assets/292a3d72-1cf3-4b06-ab73-b30713ed8d48" />
+
+**After:**
+
+<img width="1728" height="962" alt="Screenshot 2026-02-06 at 15 39 26" src="https://github.com/user-attachments/assets/1a4f1ca5-2da0-47c6-91a1-08b6b45530f0" />
+
+<img width="1726" height="961" alt="Screenshot 2026-02-06 at 15 41 19" src="https://github.com/user-attachments/assets/0ce89b52-8f3c-4496-b2c6-6f86be491e22" />
+
+Bij mijn huidige design kun je ook horizontaal scrollen waardoor ik als het ware ook meerdere pagina's heb, die zo aan elkaar zitten dat het voelt als een geheel. Het staat dus technisch eigenlijk wel goed, en is dus een goede basis waar ik volgende week verder mee kan.
+
+### Volgende keer
+
+Ik wil volgende week meteen beginnen met het animeren van mijn motor en oefenen met het animeren van tekst. Ik wil kijken of ik de sign met mijn naam kan laten animeren op een leuke manier. Het scheelt al wel dat ik al mijn data al dynamisch in kan laden via de API, dus daar hoef ik niet iets aan te veranderen.
+
+### Samengevat
+
+Dus kort samengevat heb ik deze week:
+
+- Mijn concept bedacht en omgegooid
+- Geleerd hoe een horizontal scroll werkt
+- Neon gestyld, met blur en shadows
+- De FDND API gekoppeld en de data ingeladen
+
+
+
+
+
+
+
+
 <img width="712" height="852" alt="Screenshot 2026-02-04 at 15 33 25" src="https://github.com/user-attachments/assets/c4a26417-743a-48b4-8876-7aa7252ebd21" />
 
 
