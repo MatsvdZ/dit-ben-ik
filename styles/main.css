@@ -1,98 +1,147 @@
 /********************/
-/* ALGEMENE STYLING */
+/* RESET + VARIABLES */
 /********************/
-
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  /* Font */
+  /* Fonts */
   --font: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  @import url("https://fonts.googleapis.com/css2?family=Warnes&display=swap");
 
-  /* Font sizes */
-  --fs-xs: 0.75rem; /* 12px */
-  --fs-sm: 0.875rem; /* 14px */
-  --fs-base: 1rem; /* 16px */
-  --fs-md: 1.125rem; /* 18px */
-  --fs-lg: 1.5rem; /* 24px */
-  --fs-xl: 2rem; /* 32px */
-  --fs-xxl: 2.75rem; /* 44px */
-
-  /* Font weights */
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 700;
-
-  /* Kleuren */
-  --color-text: #1a1a1a;
-  --color-muted: #666;
-  --color-bg: #ffffff;
-  --color-primary: #4f46e5;
-
-  /* Spacing schaal */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
+  /* Sizing */
   --space-lg: 2rem;
-  --space-xl: 4rem;
-
-  /* Border radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
   --radius-lg: 16px;
 
-  /* Shadow */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+  /* Neon palette */
+  --blue: #00c8ff;
+  --bg: #05060a;
+
+  /* TRON grid */
+  --grid-size: 48px;
+  --grid-line: #00c8ff;
+  --grid-glow: #00c8ff;
+}
+
+/*************/
+/* PAGE BASE */
+/*************/
+html,
+body {
+  height: 100%;
 }
 
 body {
   font-family: var(--font);
-  color: var(--color-text);
-  background-color: rgb(255, 255, 255);
-  /* background-image: url(/assets/img/track.jpg); */
-  width: 100%;
-  height: 100vh;
+  color: white;
+  background: var(--bg);
+  overflow-x: hidden; /* keep safe */
+}
+
+/********************/
+/* SLIDES (ROTATED) */
+/********************/
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 300vw; /* 3 slides */
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.outer-wrapper {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.outer-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/*********************/
+/* SLIDE BACKGROUNDS */
+/*********************/
+
+#section-1 {
+  position: relative;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
+  overflow: hidden; /* keep the tron scene clipped to the slide */
+}
+
+#section-2 {
+  position: relative;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
+  overflow: hidden; /* keep the tron scene clipped to the slide */
+}
+
+#section-3 {
+  position: relative;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
+  overflow: hidden; /* keep the tron scene clipped to the slide */
 }
 
 /*****************/
-/* IMAGE STYLING */
+/* GAME BOARD UI */
 /*****************/
-
-img {
-  max-width: 100%;
-  height: 30vh;
-  display: block;
-  margin: auto;
-  margin-top: 8em;
-}
-
-/**************************/
-/* KEYFRAMES / ANIMATIONS */
-/**************************/
-
 .game-board {
   text-align: center;
   padding: 1em 0.75em;
-  border: 2px solid #0ff;
+  border: 2px solid var(--blue);
   border-radius: 1em;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   width: 70vw;
   margin: auto;
   margin-top: 4em;
-
   box-shadow:
-    0 0 0.2rem #0ff,
-    0 0 0.2rem #0ff,
-    0 0 2rem #0ff,
-    0 0 0.8rem #0ff,
-    0 0 2.8rem #0ff,
-    inset 0 0 1.3rem #0ff;
+    0 0 0.2rem var(--blue),
+    0 0 0.2rem var(--blue),
+    0 0 2rem var(--blue),
+    0 0 0.8rem var(--blue),
+    0 0 2.8rem var(--blue),
+    inset 0 0 1.3rem var(--blue);
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -105,31 +154,32 @@ img {
 
 .start-button {
   padding: 15px 40px;
-  font-size: var(--fs-lg);
+  font-size: 1.5rem;
   border-radius: var(--radius-lg);
   border: none;
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px #0ff;
+  box-shadow: 0 0 15px var(--blue);
   color: white;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .start-button:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .neonText {
-  color: #0ff;
+  color: var(--blue);
   text-shadow:
-    0 0 8px #0ff,
-    0 0 34px #0ff;
+    0 0 8px var(--blue),
+    0 0 34px var(--blue);
   animation: pulse 3s ease-in-out infinite;
-  font-family: "Warnes", cursive;
   font-weight: 800;
-  font-style: normal;
   font-size: 2em;
   line-height: 1.2em;
 }
@@ -144,63 +194,287 @@ img {
   }
 }
 
-/*****************************/
-/* HORIZONTAL SCROLL ELEMENT */
-/*****************************/
+/********************/
+/* MOTOR (OPTIONAL) */
+/********************/
+.hero-img {
+  position: fixed;
+  left: 50%;
+  top: 60%;
+  width: auto;
+  height: 30vh;
+  transform: translate(-50%, -50%) scaleX(-1);
+
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/**************/
+/* TRON SCENE */
+/**************/
 
 .slide {
+  position: relative;
   width: 100vw;
   height: 100vh;
-}
-
-.wrapper {
+  padding: 6vh 6vw;
   display: flex;
-  flex-direction: row;
-  width: 300vw; /* Moet gelijk staan aan het aantal slides * 100vw */
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
 }
 
-.slide:nth-of-type(1) {
-  background: rgb(0, 0, 0);
-  background-image: url(/assets/img/road.jpg);
-  background-size: cover;
-}
-
-.slide:nth-of-type(2) {
-  background: green;
-  background-image: url(/assets/img/road.jpg);
-  background-size: cover;
-}
-
-.slide:nth-of-type(3) {
-  background: yellow;
-  background-image: url(/assets/img/road.jpg);
-  background-size: cover;
-}
-
-.outer-wrapper {
-  width: 100vh;
-  height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
+.slide .scene {
   position: absolute;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-::-webkit-scrollbar {
-  display: none; /* Chrome, Safari en Opera */
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
+.slide .grid {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 180vw;
+  height: 220vh;
+
+  transform: translateX(-50%) perspective(900px) rotateX(68deg);
+  transform-origin: center bottom;
+
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to top, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-position: center;
+
+  opacity: 0.95;
+
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 0) 85%
+  );
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 0) 85%
+  );
+}
+
+.slide .grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.25;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.slide .horizon {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 120vw;
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 247, 255, 0.9),
+    transparent
+  );
+  box-shadow:
+    0 0 20px rgba(0, 247, 255, 0.6),
+    0 0 60px rgba(0, 247, 255, 0.25);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      1200px 900px at 50% 30%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.65) 85%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 2; /* net boven de grid, onder je panel */
+}
+
+.slide .panel,
+.slide .game-board {
+  position: relative;
+  z-index: 5;
+}
+
+#section-2 {
+  --grid-glow: #7fe9ff;
+}
+
+#section-3 {
+  --grid-glow: #ff2bd6;
+}
+
+.panel {
+  width: min(1000px, 90vw);
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 200, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(5, 8, 12, 0.65);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.12);
+}
+
+.cards {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0 0 0.35rem;
+}
+
+.value {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.link {
+  color: #7fe9ff;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.two-col {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+
+.sub {
+  margin: 0 0 0.75rem;
+  opacity: 0.9;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-list li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.35rem 0;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #00c8ff;
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.8);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 200, 255, 0.55);
+  text-decoration: none;
+  color: #7fe9ff;
+  background: rgba(0, 200, 255, 0.08);
+}
+.btn:hover {
+  background: rgba(0, 200, 255, 0.18);
+}
+.btn.ghost {
+  background: transparent;
+  opacity: 0.9;
+}
+
+/*********************/
+/* RESPONSIVE TWEAKS */
+/*********************/
 @media (max-width: 888px) {
   .outer-wrapper {
-    height: 100vh !important; /* Zorgt ervoor dat de hoogte van de outer-wrapper gelijk is aan de viewporthoogte, zodat deze niet groter wordt dan het scherm. */
+    height: 100vh !important;
+    width: 100vw !important;
+    transform: none !important; /* easiest mobile fallback */
+    position: relative;
   }
+
   .wrapper {
-    width: calc(
-      400vw + (100vh - 100vw)
-    ) !important; /* Past de breedte van de wrapper aan op basis van het aantal slides en de hoogte van de outer-wrapper. */
+    width: 300vw !important;
+    transform: none !important;
+  }
+
+  /* On mobile fallback: slides become normal horizontal scrolling */
+  .outer-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .wrapper {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --grid-size: 36px;
+  }
+
+  #section-1 .grid {
+    transform: translateX(-50%) perspective(700px) rotateX(70deg);
+  }
+
+  #section-2 .grid {
+    transform: translateX(-50%) perspective(700px) rotateX(70deg);
+  }
+
+  #section-3 .grid {
+    transform: translateX(-50%) perspective(700px) rotateX(70deg);
   }
 }
