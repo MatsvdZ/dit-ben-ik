@@ -91,6 +91,27 @@ Dus kort samengevat heb ik deze week:
 - De FDND API gekoppeld en de data ingeladen
 
 
+## Vierde checkout (09-02)
+
+### Wat heb ik gedaan?
+Ik heb vandaag gewerkt aan veel verschillende dingen. Ik begon met het toevoegen van leuke effecten op mijn tekst op mijn beginscherm. Ik heb een glitch effect toegevoegd wat natuurlijk past bij de tron vibe waar ik voor ga. Ook heb ik de 'Ready to ride' knop een leuke roterende animatie gegeven. Daarnaast heb ik ook het pulse effect sterker gemaakt, zodat dit lekker opvalt.
+
+Ik heb ook mijn motor een hover animatie gegeven waardoor deze een wheelie doet wanneer je erover hovert.
+
+Ik heb ook nog een custom cursor toegevoegd, wat de look van de site wat meer immersive maakt.
+
+Ik heb een play button voor muziek toegevoegd, waarmee je de Tron themesong aan kan zetten, wat de vibe natuurlijk leuker maakt.
+
+Daarnaast hebben we de extra eis gekregen om ook andere mensen hun data in te laden, dit kon ik gelukkig redelijk makkelijk toevoegen. Ik wist ook de perfecte plek hiervoor, namelijk de mogelijkheid om van player te switchen, wat dus eigenlijk gelijk staat aan het aanpassen van de data van andere mensen.
+
+### Hoe lang duurde het?
+
+
+###  Wat heb ik geleerd?
+
+
+### Wat ga ik morgen doen?
+
 
 
 
