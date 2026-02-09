@@ -119,3 +119,11 @@ https://www.youtube.com/watch?v=n-9drcPkpZg
 https://www.youtube.com/watch?v=OeaHnxahf40
 
 https://stackoverflow.com/questions/53416334/css-80s-tron-grid
+
+https://stackoverflow.com/questions/40677764/how-to-fetch-data-over-multiple-pages
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number
+
+https://www.youtube.com/watch?v=NOMa56y_Was
+
+https://www.youtube.com/watch?v=J2BK1iBdkIA

@@ -211,3 +211,44 @@ document.getElementById("prev-player")?.addEventListener("click", () => {
 /*********/
 
 getInfo();
+
+const audio = document.getElementById("audio");
+const toggle = document.getElementById("toggle");
+const progress = document.getElementById("progress");
+const timeEl = document.getElementById("time");
+const volume = document.getElementById("volume"); // optioneel
+
+const fmt = (s) => {
+  if (!Number.isFinite(s)) return "0:00";
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60)
+    .toString()
+    .padStart(2, "0");
+  return `${m}:${sec}`;
+};
+
+// Play/pause knop
+toggle.addEventListener("click", async () => {
+  try {
+    if (audio.paused) {
+      await audio.play(); // kan rejecten door autoplay policies
+      toggle.textContent = "⏸";
+    } else {
+      audio.pause();
+      toggle.textContent = "▶";
+    }
+  } catch (e) {
+    console.log(
+      "Play blocked (autoplay policy). Klik nog eens of start via user gesture.",
+      e,
+    );
+  }
+});
+
+
+// Seek wanneer je slider beweegt
+progress.addEventListener("input", () => {
+  if (!Number.isFinite(audio.duration)) return;
+  audio.currentTime = (progress.value / 100) * audio.duration;
+});
+
