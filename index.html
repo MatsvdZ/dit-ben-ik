@@ -12,23 +12,39 @@
         <div class="wrapper">
           <section id="section-1" class="slide">
             <div class="game-board">
-              <h1 class="player-name neonText">
+              <h1 class="player-name neonText boot glitch" data-text="">
                 <span data-field="name"></span>
               </h1>
-
-              <!-- liever geen <a> in <button> -->
+              <div class="rain" aria-hidden="true"></div>
               <button class="start-button neonText" type="button">
                 Ready to ride
               </button>
             </div>
+
             <div class="scene">
               <div class="grid"></div>
               <div class="horizon"></div>
             </div>
+            <img
+              class="hero-img"
+              src="assets/img/tronbike.png"
+              alt="Ik op de motor"
+            />
           </section>
 
           <section id="section-2" class="slide">
             <div class="panel">
+              <div class="player-id-input">
+                <label for="player-id">Player ID</label>
+                <input
+                  id="player-id"
+                  type="number"
+                  placeholder="bijv. 308"
+                  min="1"
+                />
+                <button id="load-player" class="btn">Load</button>
+                <p class="id-error" aria-live="polite"></p>
+              </div>
               <h2 class="neonText">PLAYER STATS</h2>
 
               <div class="cards">
@@ -107,12 +123,6 @@
           </section>
         </div>
       </div>
-
-      <img
-        class="hero-img"
-        src="assets/img/tronbike.png"
-        alt="Ik op de motor"
-      />
 
       <!-- <section>
         <div class="game-board">

@@ -146,10 +146,20 @@ body {
 }
 
 .player-name {
-  font-size: 3rem;
-  letter-spacing: 4px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+  text-align: center;
+  max-width: 90%;
+  margin-inline: auto;
+
+  white-space: normal;
+  word-break: break-word;
+
+  font-size: clamp(2rem, 6vw, 3rem);
+
+  letter-spacing: 0.25em;
+}
+
+h1 {
+  margin-bottom: 1em;
 }
 
 .start-button {
@@ -166,6 +176,59 @@ body {
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  position: relative;
+  isolation: isolate; /* belangrijk voor pseudo-element */
+  overflow: hidden;
+}
+
+/* Roterende neon ring */
+.start-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* iets groter dan knop */
+  border-radius: inherit;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #00c8ff00 60deg,
+    #00c8ff 90deg,
+    #4b4149e6 120deg,
+    #00c8ff00 160deg,
+    transparent 360deg
+  );
+
+  animation: spinBorder 2.4s linear infinite;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+/* Mask: alleen de rand zichtbaar */
+.start-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.start-button:hover::before {
+  animation-duration: 1.2s;
+  filter: blur(2px);
+}
+
+.start-button:active {
+  transform: scale(0.96);
+}
+
+@keyframes spinBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .start-button:hover {
@@ -178,7 +241,7 @@ body {
   text-shadow:
     0 0 8px var(--blue),
     0 0 34px var(--blue);
-  animation: pulse 3s ease-in-out infinite;
+
   font-weight: 800;
   font-size: 2em;
   line-height: 1.2em;
@@ -190,25 +253,30 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.85;
+    opacity: 0.50;
   }
 }
 
-/********************/
-/* MOTOR (OPTIONAL) */
-/********************/
+/*********/
+/* MOTOR */
+/*********/
+
 .hero-img {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 60%;
   width: auto;
   height: 30vh;
   transform: translate(-50%, -50%) scaleX(-1);
 
-  z-index: 1000;
-  pointer-events: none;
+  z-index: 10;
+
+  transition: transform 0.7s ease-in-out;
 }
 
+.hero-img:hover {
+  transform: translate(-50%, -50%) scaleX(-1) rotate(360deg);
+}
 /**************/
 /* TRON SCENE */
 /**************/
@@ -329,14 +397,6 @@ body {
   z-index: 5;
 }
 
-#section-2 {
-  --grid-glow: #7fe9ff;
-}
-
-#section-3 {
-  --grid-glow: #ff2bd6;
-}
-
 .panel {
   width: min(1000px, 90vw);
   padding: 2.5rem;
@@ -438,15 +498,15 @@ body {
 /*********************/
 @media (max-width: 888px) {
   .outer-wrapper {
-    height: 100vh !important;
-    width: 100vw !important;
-    transform: none !important; /* easiest mobile fallback */
+    height: 100vh;
+    width: 100vw;
+    transform: none; /* easiest mobile fallback */
     position: relative;
   }
 
   .wrapper {
-    width: 300vw !important;
-    transform: none !important;
+    width: 300vw;
+    transform: none;
   }
 
   /* On mobile fallback: slides become normal horizontal scrolling */
@@ -477,4 +537,259 @@ body {
   #section-3 .grid {
     transform: translateX(-50%) perspective(700px) rotateX(70deg);
   }
+}
+
+/**********************/
+/* TRON BOOT SEQUENCE */
+/**********************/
+
+.boot {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.15em 0.25em;
+}
+
+/* Type-in effect: onthult de tekst */
+.boot {
+  --reveal: 0%;
+  clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+  animation: bootReveal 1.3s ease-out forwards;
+}
+
+/* Scanline die tijdens boot over de tekst gaat */
+.boot::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 0;
+  width: 120%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 200, 255, 0.9),
+    transparent
+  );
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.65);
+  opacity: 0;
+  transform: translateY(-30%);
+  animation: scanline 1.3s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Subtiele “boot flicker” op de glow */
+.boot {
+  animation:
+    bootReveal 1.3s ease-out forwards,
+    bootFlicker 2.8s ease-in-out infinite 1.3s; /* start na boot */
+}
+
+/* === CONTINUE GLITCH (altijd aan) === */
+.glitch {
+  text-shadow:
+    0 0 8px var(--blue),
+    0 0 34px var(--blue);
+}
+
+/* 2 kopieën van de tekst via data-text */
+.glitch::before,
+.glitch::marker {
+  content: "";
+} /* no-op, helpt niets maar laat met rust */
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* cyan laag */
+.glitch::before {
+  transform: translate(2px, 0);
+  filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.8));
+  animation: glitchA 2.2s linear infinite 1.3s; /* start na boot */
+}
+
+/* magenta laag */
+.glitch::after {
+  transform: translate(-2px, 0);
+  filter: drop-shadow(0 0 10px rgba(255, 43, 214, 0.7));
+  animation: glitchB 2.8s linear infinite 1.3s reverse; /* start na boot */
+}
+
+/* Keyframes */
+@keyframes bootReveal {
+  0% {
+    --reveal: 0%;
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    --reveal: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+}
+
+@keyframes bootFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Glitch: clip-path “snijdt” stroken uit de kopieën */
+@keyframes glitchA {
+  0% {
+    clip-path: inset(80% 0 10% 0);
+    transform: translate(2px, 0);
+  }
+  10% {
+    clip-path: inset(40% 0 45% 0);
+    transform: translate(-2px, -1px);
+  }
+  20% {
+    clip-path: inset(65% 0 20% 0);
+    transform: translate(3px, 1px);
+  }
+  30% {
+    clip-path: inset(10% 0 75% 0);
+    transform: translate(-3px, 0);
+  }
+  40% {
+    clip-path: inset(55% 0 30% 0);
+    transform: translate(2px, 1px);
+  }
+  50% {
+    clip-path: inset(25% 0 55% 0);
+    transform: translate(-1px, 0);
+  }
+  60% {
+    clip-path: inset(75% 0 12% 0);
+    transform: translate(4px, -1px);
+  }
+  70% {
+    clip-path: inset(35% 0 50% 0);
+    transform: translate(-4px, 1px);
+  }
+  80% {
+    clip-path: inset(60% 0 25% 0);
+    transform: translate(2px, 0);
+  }
+  90% {
+    clip-path: inset(5% 0 88% 0);
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    clip-path: inset(80% 0 10% 0);
+    transform: translate(2px, 0);
+  }
+}
+
+@keyframes glitchB {
+  0% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-2px, 0);
+  }
+  12% {
+    clip-path: inset(55% 0 25% 0);
+    transform: translate(3px, 1px);
+  }
+  24% {
+    clip-path: inset(30% 0 55% 0);
+    transform: translate(-3px, 0);
+  }
+  36% {
+    clip-path: inset(75% 0 10% 0);
+    transform: translate(2px, -1px);
+  }
+  48% {
+    clip-path: inset(15% 0 70% 0);
+    transform: translate(-4px, 1px);
+  }
+  60% {
+    clip-path: inset(62% 0 20% 0);
+    transform: translate(4px, 0);
+  }
+  72% {
+    clip-path: inset(40% 0 45% 0);
+    transform: translate(-2px, -1px);
+  }
+  84% {
+    clip-path: inset(85% 0 5% 0);
+    transform: translate(2px, 1px);
+  }
+  100% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-2px, 0);
+  }
+}
+
+/* Respecteer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .boot,
+  .boot::after,
+  .glitch::before,
+  .glitch::after {
+    animation: none;
+  }
+  .boot {
+    clip-path: none;
+  }
+}
+
+
+/***********************/
+/* PLAYER SEARCH FIELD */
+/***********************/
+
+.player-id-input {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.player-id-input input {
+  width: 120px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  background: rgba(0, 0, 0, 0.4);
+  color: #7fe9ff;
+}
+
+.player-id-input input:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+}
+
+.id-error {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: #ff6b6b;
 }
