@@ -105,13 +105,14 @@ Ik heb een play button voor muziek toegevoegd, waarmee je de Tron themesong aan 
 Daarnaast hebben we de extra eis gekregen om ook andere mensen hun data in te laden, dit kon ik gelukkig redelijk makkelijk toevoegen. Ik wist ook de perfecte plek hiervoor, namelijk de mogelijkheid om van player te switchen, wat dus eigenlijk gelijk staat aan het aanpassen van de data van andere mensen.
 
 ### Hoe lang duurde het?
+Ik heb in totaal 5.5 uur echt gewerkt aan mijn eigen project. Ik vind dat ik in deze relatief korte tijd eigenlijk al wel veel bereikt heb.
 
 
 ###  Wat heb ik geleerd?
-
+Ik heb vandaag geleerd hoe ik geluid toe kan voegen aan mijn site door de ```audio``` tag te gebruiken. Ook heb ik voor het eerst een eigen cursor gemaakt, die past bij de stijl van mijn site. Ik heb verder ook nog redelijk wat geoefend met de animaties bij tekst, en het roteren van mijn foto.
 
 ### Wat ga ik morgen doen?
-
+Ik wil morgen een andere font gaan gebruiken, om deze wat meer bij mijn idee te laten passen. Daarnaast wil ik ook al een klein beetje met responsiveness aan de slag. Ook moet ik echt beginnen aan het tonen van mijn leerdoelen op een of andere manier, maar ik ben er nog niet over uit hoe ik dit ga doen.
 
 
 
