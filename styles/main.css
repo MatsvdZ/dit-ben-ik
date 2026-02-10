@@ -422,14 +422,13 @@ h1 {
 }
 
 .panel {
-  width: min(1000px, 90vw);
+  width: 80vw;
   padding: 2.5rem;
   border: 1px solid rgba(0, 200, 255, 0.35);
   border-radius: 18px;
   background: rgba(5, 8, 12, 0.65);
   backdrop-filter: blur(8px);
   box-shadow: 0 0 30px rgba(0, 200, 255, 0.12);
-  text-wrap: wrap;
 }
 
 .cards {
@@ -444,6 +443,7 @@ h1 {
   border-radius: 14px;
   border: 1px solid rgba(0, 200, 255, 0.25);
   background: rgba(0, 0, 0, 0.35);
+  text-wrap: wrap;
 }
 
 .card-wide {
@@ -842,7 +842,6 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
   position: relative;
   align-items: center;
   gap: 1rem;
-  
 }
 
 #toggle {
@@ -866,15 +865,14 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
     var(--bg);
 }
 
-
 /****************/
 /* PAGE 3 DISCS */
 /****************/
 
 .panel img {
-  width: 10rem;
-  height: auto;
-  animation: rotate 2s linear infinite 1.3s;
+  max-height: auto;
+  width: 7rem;
+  animation: rotate 2s linear infinite;
 }
 
 @keyframes rotate {
@@ -884,11 +882,9 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
   to {
     transform: rotate(360deg);
   }
-
 }
 
 .img-wrapper {
   display: flex;
   flex-direction: column;
 }
-
