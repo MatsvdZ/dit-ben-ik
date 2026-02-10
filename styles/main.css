@@ -7,13 +7,18 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Xirod;
+  src: url(/assets/fonts/Xirod.otf) format("opentype");
+}
+
 :root {
   /* Fonts */
-  --font: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: "Xirod", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* Sizing */
   --space-lg: 2rem;
-  --radius-lg: 16px;
+  --radius-lg: 1rem;
 
   /* Neon palette */
   --blue: #00c8ff;
@@ -137,13 +142,13 @@ body {
 /*****************/
 .game-board {
   text-align: center;
-  padding: 1em 0.75em;
+  padding: 1rem 0.75rem;
   border: 2px solid var(--blue);
-  border-radius: 1em;
+  border-radius: 1rem;
   backdrop-filter: blur(10px);
   width: 70vw;
   margin: auto;
-  margin-top: 4em;
+  margin-top: 1rem;
   box-shadow:
     0 0 0.2rem var(--blue),
     0 0 0.2rem var(--blue),
@@ -152,6 +157,18 @@ body {
     0 0 2.8rem var(--blue),
     inset 0 0 1.3rem var(--blue);
   animation: pulse 3s ease-in-out infinite;
+}
+
+@media (max-height: 850px) {
+  .game-board {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 650px) {
+  .game-board {
+    font-size: 8px;
+  }
 }
 
 .player-name {
@@ -164,16 +181,17 @@ body {
 
   font-size: clamp(2rem, 6vw, 3rem);
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.25rem;
 }
 
 h1 {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .start-button {
-  padding: 15px 40px;
-  font-size: 1.5rem;
+  font-family: var(--font);
+  padding: 1rem 3rem;
+  text-wrap: wrap;
   border-radius: var(--radius-lg);
   border: none;
   cursor: pointer;
@@ -414,6 +432,7 @@ h1 {
   background: rgba(5, 8, 12, 0.65);
   backdrop-filter: blur(8px);
   box-shadow: 0 0 30px rgba(0, 200, 255, 0.12);
+   text-wrap: wrap;
 }
 
 .cards {
@@ -428,6 +447,7 @@ h1 {
   border-radius: 14px;
   border: 1px solid rgba(0, 200, 255, 0.25);
   background: rgba(0, 0, 0, 0.35);
+ 
 }
 
 .card-wide {
@@ -486,8 +506,8 @@ h1 {
 
 .btn {
   display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.9rem 1.2rem;
+
+  padding: 0.5rem 0.75rem;
   border-radius: 14px;
   border: 1px solid rgba(0, 200, 255, 0.55);
   text-decoration: none;
@@ -806,6 +826,7 @@ h1 {
 ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38012
 */
 
+/* Verstoppen van spinner buttons in inputveld */
 .player-id-input input[type="number"]::-webkit-outer-spin-button,
 .player-id-input input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -818,17 +839,25 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
 }
 
 .player {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
 }
 
 #toggle {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 3rem;
+  height: 3rem;
+  border: #00c8ff solid 2px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
+  color: #00c8ff;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
 }
-
-#progress { width: 280px; }

@@ -1,6 +1,6 @@
-/************************/
-/* CONFIG               */
-/************************/
+/**********/
+/* CONFIG */
+/**********/
 
 const START_PLAYER_ID = 308;
 const API_URL = "https://fdnd.directus.app/items/person";
@@ -94,9 +94,9 @@ idInput?.addEventListener("keydown", (e) => {
   }
 });
 
-/*******************/
+/*****************/
 /* SEARCH PLAYER */
-/*******************/
+/*****************/
 
 function showPlayerById(id) {
   const index = players.findIndex((p) => Number(p.id) === Number(id));
@@ -244,11 +244,3 @@ toggle.addEventListener("click", async () => {
     );
   }
 });
-
-
-// Seek wanneer je slider beweegt
-progress.addEventListener("input", () => {
-  if (!Number.isFinite(audio.duration)) return;
-  audio.currentTime = (progress.value / 100) * audio.duration;
-});
-
