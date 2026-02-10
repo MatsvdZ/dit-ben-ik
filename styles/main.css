@@ -8,10 +8,6 @@
 }
 
 :root {
-  /* Fonts */
-  --font: cc-running-with-scissors-up, sans-serif;
-
-
   /* Sizing */
   --space-lg: 2rem;
   --radius-lg: 1rem;
@@ -35,7 +31,9 @@ body {
 }
 
 body {
-  font-family: var(--font);
+  font-family: "ethnocentric", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: white;
   background: var(--bg);
   overflow-x: hidden;
@@ -185,7 +183,9 @@ h1 {
 }
 
 .start-button {
-  font-family: var(--font);
+  font-family: "ethnocentric", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   padding: 1rem 3rem;
   text-wrap: wrap;
   border-radius: var(--radius-lg);
