@@ -194,17 +194,6 @@ document.querySelector(".start-button")?.addEventListener("click", () => {
   });
 });
 
-/****************/
-/* OPTIONAL NAV */
-/****************/
-
-document.getElementById("next-player")?.addEventListener("click", () => {
-  showPlayer(currentIndex + 1);
-});
-
-document.getElementById("prev-player")?.addEventListener("click", () => {
-  showPlayer(currentIndex - 1);
-});
 
 /*********/
 /* START */
@@ -214,18 +203,7 @@ getInfo();
 
 const audio = document.getElementById("audio");
 const toggle = document.getElementById("toggle");
-const progress = document.getElementById("progress");
-const timeEl = document.getElementById("time");
-const volume = document.getElementById("volume"); // optioneel
 
-const fmt = (s) => {
-  if (!Number.isFinite(s)) return "0:00";
-  const m = Math.floor(s / 60);
-  const sec = Math.floor(s % 60)
-    .toString()
-    .padStart(2, "0");
-  return `${m}:${sec}`;
-};
 
 // Play/pause knop
 toggle.addEventListener("click", async () => {
