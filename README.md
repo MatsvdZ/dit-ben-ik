@@ -115,7 +115,29 @@ Ik heb vandaag geleerd hoe ik geluid toe kan voegen aan mijn site door de ```aud
 Ik wil morgen een andere font gaan gebruiken, om deze wat meer bij mijn idee te laten passen. Daarnaast wil ik ook al een klein beetje met responsiveness aan de slag. Ook moet ik echt beginnen aan het tonen van mijn leerdoelen op een of andere manier, maar ik ben er nog niet over uit hoe ik dit ga doen.
 
 
+## Vijfde checkout (10-02)
 
+### Wat heb ik gedaan?
+Ik heb een redelijk stuk gedaan vandaag. Ik had een paar probelemen die ik op moest lossen, en dat heb ik gedaan, samen ook met de hulp van Vasilis. 
+
+Ik heb ook eindelijk een passend lettertype toegevoegd, en deze werkt ook echt op de live versie van de site.
+
+Ik heb nog een beetje de play music button gestyled en verplaatst, waardoor deze nu netjes op zijn plek staat.
+
+Ik heb op mijn laatste pagina nu een klein begin gemaakt met het tonen van mijn leerdoelen, omdat ik nu ook weet wat ik ongeveer zou willen. Ik ga spinning discs (uit Tron) gebruiken waar de tekst als het ware uit wordt geschoten. De tekst gaat dan naar de andere kant en wordt daarna opnieuw afgespeeld.
+
+En als laatst heb ik vandaag ook een beetje geoefend met het responsive maken van mijn site. Hier heb ik ook redelijk veel tijd in gestoken.
+
+### Hoe lang duurde het?
+Ik heb vandaag in totaal een kleine 5 uur echt kunnen werken aan mijn project. Dit heeft ervoor gezorgd dat ik best wel een flinke stap heb kunnen maken, en ik denk dat ik het dus ook gewoon optijd af ga krijgen.
+
+
+###  Wat heb ik geleerd?
+Vandaag heb ik niet persé echt veel geleerd, want ik heb vandaag veel gefinetuned aan wat ik al had.
+
+
+### Wat ga ik morgen doen?
+Ik ga kijken of het lukt met het toevoegen van een soort light en dark mode maken. Ook ga ik mijn leerdoel pagina afmaken en alles volledig responsive maken.
 
 
 
