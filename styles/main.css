@@ -186,7 +186,7 @@ h1 {
   font-family: "ethnocentric", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   text-wrap: wrap;
   border-radius: var(--radius-lg);
   border: none;
@@ -310,6 +310,7 @@ h1 {
   height: 100vh;
   padding: 6vh 6vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -837,6 +838,11 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
 }
 
 .player {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+  
 }
 
 #toggle {
@@ -859,3 +865,30 @@ ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38
     ),
     var(--bg);
 }
+
+
+/****************/
+/* PAGE 3 DISCS */
+/****************/
+
+.panel img {
+  width: 10rem;
+  height: auto;
+  animation: rotate 2s linear infinite 1.3s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+

@@ -149,3 +149,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/numbe
 https://www.youtube.com/watch?v=NOMa56y_Was
 
 https://www.youtube.com/watch?v=J2BK1iBdkIA
+
+https://fonts.adobe.com/fonts/ethnocentric
+
+https://www.w3schools.com/html/html5_audio.asp
