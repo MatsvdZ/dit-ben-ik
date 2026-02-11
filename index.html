@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dit ben ik!</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/trondisc.png" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ugk6zbr.css" />
   </head>
+
   <body>
     <main>
       <audio id="audio" src="assets/audio/tronSoundtrack.mp3" loop></audio>
@@ -32,11 +34,19 @@
               <div class="grid"></div>
               <div class="horizon"></div>
             </div>
-            <img
-              class="hero-img"
-              src="assets/img/tronbike.png"
-              alt="Ik op de motor"
-            />
+
+            <!-- Bron: Sanne -->
+            <picture>
+              <source
+                srcset="assets/img/tronbikered.png"
+                media="(prefers-color-scheme: dark)"
+              />
+              <img
+                class="hero-img"
+                src="assets/img/tronbike.png"
+                alt="Product logo"
+              />
+            </picture>
           </section>
 
           <section id="section-2" class="slide">
@@ -104,11 +114,31 @@
             <div class="panel">
               <h2 class="neonText">LEERDOELEN</h2>
               <div class="img-wrapper">
-                <img src="assets/img/tronDisc.png" alt="Tron disc" />
+                <picture>
+                  <source
+                    srcset="assets/img/trondiscred.png"
+                    media="(prefers-color-scheme: dark)"
+                  />
+                  <img src="assets/img/trondisc.png" alt="Product logo" />
+                </picture>
                 <p>Leerdoel 1</p>
-                <img src="assets/img/tronDisc.png" alt="Tron disc" />
+
+                <picture>
+                  <source
+                    srcset="assets/img/trondiscred.png"
+                    media="(prefers-color-scheme: dark)"
+                  />
+                  <img src="assets/img/trondisc.png" alt="Product logo" />
+                </picture>
                 <p>Leerdoel 2</p>
-                <img src="assets/img/tronDisc.png" alt="Tron disc" />
+
+                <picture>
+                  <source
+                    srcset="assets/img/trondiscred.png"
+                    media="(prefers-color-scheme: dark)"
+                  />
+                  <img src="assets/img/trondisc.png" alt="Product logo" />
+                </picture>
                 <p>Leerdoel 3</p>
               </div>
             </div>
@@ -119,29 +149,6 @@
           </section>
         </div>
       </div>
-
-      <!-- <section>
-        <div class="game-board">
-          <h1 class="player-name neonText"><span data-field="name"></span></h1>
-          <button class="start-button neonText">Ready to ride</button>
-        </div>
-      </section> -->
-
-      <!-- <article>
-        <h2 data-field="name"></h2>
-        <p data-field="nickname"></p>
-        <p>Bio: <span data-field="bio"></span></p>
-        <p>Birthday: <span data-field="birthdate"></span></p>
-        <p>GitHub: <span data-field="github_handle"></span></p>
-        <p>Avatar: <span data-field="avatar"></span></p>
-        <p>
-          Website:
-          <a href="https://matsvdz.github.io/portfolio/"
-            ><span data-field="website"></span
-          ></a>
-        </p>
-      </article> -->
-      <!-- <img src="assets/img/motor.png" alt="Ik op de motor" /> -->
     </main>
 
     <script src="server.js"></script>

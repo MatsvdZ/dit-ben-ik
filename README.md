@@ -164,6 +164,8 @@ https://www.youtube.com/watch?v=OeaHnxahf40
 
 https://stackoverflow.com/questions/53416334/css-80s-tron-grid
 
+https://prismic.io/blog/css-text-animations
+
 https://stackoverflow.com/questions/40677764/how-to-fetch-data-over-multiple-pages
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number
@@ -175,3 +177,7 @@ https://www.youtube.com/watch?v=J2BK1iBdkIA
 https://fonts.adobe.com/fonts/ethnocentric
 
 https://www.w3schools.com/html/html5_audio.asp
+
+https://www.w3schools.com/html/html_favicon.asp
+
+https://docs.fdnd.nl/conventies.html#algemene-code-conventions

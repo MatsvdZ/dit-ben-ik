@@ -1,21 +1,21 @@
-/**********/
-/* CONFIG */
-/**********/
+/****************/
+/* MARK: CONFIG */
+/****************/
 
 const START_PLAYER_ID = 308;
 const API_URL = "https://fdnd.directus.app/items/person";
 const PAGE_LIMIT = 100;
 
-/*********/
-/* STATE */
-/*********/
+/***************/
+/* MARK: STATE */
+/***************/
 
 let players = [];
 let currentIndex = 0;
 
-/*******************/
-/* FETCH ALL PAGES */
-/*******************/
+/*************************/
+/* MARK: FETCH ALL PAGES */
+/*************************/
 
 async function fetchAllPlayers() {
   let allPlayers = [];
@@ -42,9 +42,9 @@ async function fetchAllPlayers() {
   return allPlayers;
 }
 
-/*******************/
-/* INITIALIZE DATA */
-/*******************/
+/*************************/
+/* MARK: INITIALIZE DATA */
+/*************************/
 
 async function getInfo() {
   players = await fetchAllPlayers();
@@ -94,9 +94,9 @@ idInput?.addEventListener("keydown", (e) => {
   }
 });
 
-/*****************/
-/* SEARCH PLAYER */
-/*****************/
+/***********************/
+/* MARK: SEARCH PLAYER */
+/***********************/
 
 function showPlayerById(id) {
   const index = players.findIndex((p) => Number(p.id) === Number(id));
@@ -110,9 +110,9 @@ function showPlayerById(id) {
   showPlayer(index);
 }
 
-/*****************/
-/* RENDER PLAYER */
-/*****************/
+/***********************/
+/* MARK: RENDER PLAYER */
+/***********************/
 
 function renderPlayer(player) {
   if (!player) return;
@@ -138,18 +138,18 @@ function renderPlayer(player) {
   restartBoot();
 }
 
-/*********************/
-/* PLAYER NAVIGATION */
-/*********************/
+/***************************/
+/* MARK: PLAYER NAVIGATION */
+/***************************/
 
 function showPlayer(index) {
   currentIndex = (index + players.length) % players.length;
   renderPlayer(players[currentIndex]);
 }
 
-/**********************/
-/* GLITCH / BOOT SYNC */
-/**********************/
+/****************************/
+/* MARK: GLITCH / BOOT SYNC */
+/****************************/
 
 const nameSpan = document.querySelector('[data-field="name"]');
 const h1 = document.querySelector(".player-name.glitch");
@@ -166,9 +166,9 @@ function restartBoot() {
   h1.classList.add("boot");
 }
 
-/*********************/
-/* MUTATION OBSERVER */
-/*********************/
+/***************************/
+/* MARK: MUTATION OBSERVER */
+/***************************/
 
 if (nameSpan) {
   const obs = new MutationObserver(syncGlitchText);
@@ -179,9 +179,9 @@ if (nameSpan) {
   });
 }
 
-/*********************/
-/* READY TO RIDE BTN */
-/*********************/
+/***************************/
+/* MARK: READY TO RIDE BTN */
+/***************************/
 
 document.querySelector(".start-button")?.addEventListener("click", () => {
   const target = document.querySelector("#section-2");
@@ -195,9 +195,9 @@ document.querySelector(".start-button")?.addEventListener("click", () => {
 });
 
 
-/*********/
-/* START */
-/*********/
+/***************/
+/* MARK: START */
+/***************/
 
 getInfo();
 
