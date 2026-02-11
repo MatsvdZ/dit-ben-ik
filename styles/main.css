@@ -520,6 +520,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/numbe
   text-decoration: none;
   color: var(--clr);
   background: rgba(0, 200, 255, 0.08);
+  cursor: pointer;
 }
 
 .btn:hover {
