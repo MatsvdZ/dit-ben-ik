@@ -149,12 +149,21 @@ Ik ga kijken of het lukt met het toevoegen van een soort light en dark mode make
 
 
 ## Bronnen
+https://medium.com/@noransaber685/mastering-asynchronous-javascript-from-fetch-to-async-await-a-comprehensive-guide-2fd01a2531b7
 
 https://stackoverflow.com/questions/27123399/how-to-move-an-image-up-and-down-smoothly-with-css
+
+https://codepen.io/Sidstumple/pen/LEZdEWP?editors=1100
+
+https://codepen.io/Sidstumple/pen/emzWNRo
+
+https://stackoverflow.com/questions/36060354/how-to-flip-an-image-horizontally-halfway-through-an-animation
 
 https://codepen.io/collection/EPWkPM
 
 https://www.youtube.com/watch?v=WRxUWqy1Wkw
+
+https://css-tricks.com/the-shapes-of-css/
 
 https://css-tricks.com/how-to-create-neon-text-with-css/
 
@@ -166,6 +175,10 @@ https://stackoverflow.com/questions/53416334/css-80s-tron-grid
 
 https://prismic.io/blog/css-text-animations
 
+https://prismic.io/blog/css-scroll-effects#css-text-scroll-animations
+
+https://codepen.io/shooft/pres/JojepjR
+
 https://stackoverflow.com/questions/40677764/how-to-fetch-data-over-multiple-pages
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number
@@ -174,10 +187,16 @@ https://www.youtube.com/watch?v=NOMa56y_Was
 
 https://www.youtube.com/watch?v=J2BK1iBdkIA
 
+https://www.youtube.com/watch?v=uw5jVO1eNF8
+
 https://fonts.adobe.com/fonts/ethnocentric
 
 https://www.w3schools.com/html/html5_audio.asp
 
 https://www.w3schools.com/html/html_favicon.asp
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
+
 https://docs.fdnd.nl/conventies.html#algemene-code-conventions
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture

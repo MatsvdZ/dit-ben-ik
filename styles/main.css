@@ -1,6 +1,6 @@
-/********************/
-/* RESET + VARIABLES */
-/********************/
+/***************************/
+/* MARK: RESET + VARIABLES */
+/***************************/
 * {
   margin: 0;
   padding: 0;
@@ -20,15 +20,19 @@
   --clr-a: light-dark(#00c8ff, #ff2b2b);
   --border: light-dark(#00c8ff, #ff2b2b);
   --box-shadow: light-dark(#00c8ff, #ff2b2b);
+
+  /* Alias (je gebruikte --accent in .horizon + glitch filters) */
+  --accent: var(--clr);
+
   /* TRON grid */
   --grid-size: 48px;
   --grid-line: var(--clr);
   --grid-glow: var(--clr);
 }
 
-/*************/
-/* PAGE BASE */
-/*************/
+/*******************/
+/* MARK: PAGE BASE */
+/*******************/
 html,
 body {
   height: 100%;
@@ -43,10 +47,14 @@ body {
   overflow-x: hidden;
 }
 
+/************************/
+/* MARK: CUSTOM CURSOR  */
+/************************/
+
 /* Bron ChatGPT: 
   Prompt: Kan je een custom tron style svg cursor voor me maken?
   https://chatgpt.com/share/6989e4c0-1d7c-800a-adab-b0dd8cb4fa64 
-  */
+*/
 @media (prefers-color-scheme: light) {
   body {
     cursor:
@@ -65,17 +73,9 @@ body {
   }
 }
 
-/********************/
-/* SLIDES (ROTATED) */
-/********************/
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 300vw; /* 3 slides */
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-}
+/****************************/
+/* MARK: SLIDES (ROTATED UI)*/
+/****************************/
 
 .outer-wrapper {
   width: 100vh;
@@ -93,235 +93,18 @@ body {
   display: none;
 }
 
-/*********************/
-/* SLIDE BACKGROUNDS */
-/*********************/
-
-#section-1 {
-  position: relative;
-  background:
-    radial-gradient(
-      1200px 600px at 50% 30%,
-      rgba(0, 247, 255, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 60% 60%,
-      rgba(255, 43, 214, 0.06),
-      transparent 60%
-    ),
-    var(--bg);
-  overflow: hidden; /* keep the tron scene clipped to the slide */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 300vw; /* 3 slides */
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
 }
 
-#section-2 {
-  position: relative;
-  background:
-    radial-gradient(
-      1200px 600px at 50% 30%,
-      rgba(0, 247, 255, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 60% 60%,
-      rgba(255, 43, 214, 0.06),
-      transparent 60%
-    ),
-    var(--bg);
-  overflow: hidden; /* keep the tron scene clipped to the slide */
-}
-
-#section-3 {
-  position: relative;
-  background:
-    radial-gradient(
-      1200px 600px at 50% 30%,
-      rgba(0, 247, 255, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 60% 60%,
-      rgba(255, 43, 214, 0.06),
-      transparent 60%
-    ),
-    var(--bg);
-  overflow: hidden; /* keep the tron scene clipped to the slide */
-}
-
-/*****************/
-/* GAME BOARD UI */
-/*****************/
-.game-board {
-  text-align: center;
-  padding: 1rem 0.75rem;
-  border: 2px solid var(--clr);
-  border-radius: 1rem;
-  backdrop-filter: blur(10px);
-  width: 70vw;
-  margin: auto;
-  margin-top: 1rem;
-  box-shadow:
-    0 0 0.2rem var(--clr),
-    0 0 0.2rem var(--clr),
-    0 0 2rem var(--clr),
-    0 0 0.8rem var(--clr),
-    0 0 2.8rem var(--clr),
-    inset 0 0 1.3rem var(--clr);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@media (max-height: 850px) {
-  .game-board {
-    font-size: 12px;
-  }
-}
-
-@media (max-height: 650px) {
-  .game-board {
-    font-size: 8px;
-  }
-}
-
-.player-name {
-  text-align: center;
-  max-width: 90%;
-  margin-inline: auto;
-
-  white-space: normal;
-  word-break: break-word;
-
-  font-size: clamp(2rem, 6vw, 3rem);
-
-  letter-spacing: 0.25rem;
-}
-
-h1 {
-  margin-bottom: 1rem;
-}
-
-.start-button {
-  font-family: "ethnocentric", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding: 1rem 2rem;
-  text-wrap: wrap;
-  border-radius: var(--radius-lg);
-  border: none;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px var(--clr);
-  color: white;
-  font-weight: 800;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-  position: relative;
-  isolation: isolate; /* belangrijk voor pseudo-element */
-  overflow: hidden;
-}
-
-/* Roterende neon ring */
-.start-button::before {
-  content: "";
-  position: absolute;
-  inset: -2px; /* iets groter dan knop */
-  border-radius: inherit;
-
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    #00c8ff00 60deg,
-    var(--clr) 90deg,
-    #4b4149e6 120deg,
-    #00c8ff00 160deg,
-    transparent 360deg
-  );
-
-  animation: spinBorder 2.4s linear infinite;
-  z-index: -1;
-  filter: blur(1px);
-}
-
-/* Mask: alleen de rand zichtbaar */
-.start-button::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: inherit;
-  z-index: -1;
-}
-
-.start-button:hover::before {
-  animation-duration: 1.2s;
-  filter: blur(2px);
-}
-
-.start-button:active {
-  transform: scale(0.96);
-}
-
-@keyframes spinBorder {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.start-button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-.neonText {
-  color: var(--clr);
-  text-shadow:
-    0 0 8px var(--clr),
-    0 0 34px var(--clr);
-
-  font-weight: 800;
-  font-size: 2em;
-  line-height: 1.2em;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/*********/
-/* MOTOR */
-/*********/
-
-.hero-img {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  width: auto;
-  height: 30vh;
-  transform: translate(-50%, -50%) scaleX(-1);
-
-  z-index: 10;
-
-  transition: transform 0.7s ease-in-out;
-}
-
-.hero-img:hover {
-  transform: translate(-50%, -50%) scaleX(-1) rotate(45deg);
-}
-/**************/
-/* TRON SCENE */
-/**************/
-
-.slide {
+/********************/
+/* MARK: SECTION BASE*/
+/********************/
+section {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -345,14 +128,18 @@ h1 {
     var(--bg);
 }
 
-.slide .scene {
+/************************/
+/* MARK: TRON SCENE GRID */
+/************************/
+
+section .scene {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
 }
 
-.slide .grid {
+section .grid {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -382,7 +169,7 @@ h1 {
   );
 }
 
-.slide .grid::after {
+section .grid::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -392,7 +179,7 @@ h1 {
   pointer-events: none;
 }
 
-.slide .horizon {
+section .horizon {
   position: absolute;
   left: 50%;
   top: 42%;
@@ -405,7 +192,7 @@ h1 {
     0 0 60px rgba(0, 247, 255, 0.25);
 }
 
-.slide::before {
+section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -424,17 +211,191 @@ h1 {
     );
   pointer-events: none;
   opacity: 0.35;
-  z-index: 2; /* net boven de grid, onder je panel */
+  z-index: 2;
 }
 
-.slide .panel,
-.slide .game-board {
+
+/****************************/
+/* MARK: LAYERING (CONTENT) */
+/****************************/
+
+.panel,
+.game-board,
+.player,
+.hero-img {
   position: relative;
   z-index: 5;
 }
 
+
+/********************************/
+/* MARK: PAGE 1 - PLAYER + BOARD*/
+/********************************/
+
+.player {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+}
+
+#toggle {
+  width: 3rem;
+  height: 3rem;
+  border: var(--clr) solid 2px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  color: var(--clr);
+  background:
+    radial-gradient(
+      1200px 600px at 50% 30%,
+      rgba(0, 247, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 60% 60%,
+      rgba(255, 43, 214, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
+}
+
+/* Game board */
+.game-board {
+  text-align: center;
+  padding: 1rem 0.75rem;
+  border: 2px solid var(--clr);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  width: 70vw;
+  margin: auto;
+  margin-top: 1rem;
+  box-shadow:
+    0 0 0.2rem var(--clr),
+    0 0 0.2rem var(--clr),
+    0 0 2rem var(--clr),
+    0 0 0.8rem var(--clr),
+    0 0 2.8rem var(--clr),
+    inset 0 0 1.3rem var(--clr);
+  animation: pulse 3s ease-in-out infinite;
+
+  /* fallback voor text-wrap (nog niet overal) */
+  text-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.start-button {
+  font-family: "ethnocentric", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1rem 2rem;
+  text-wrap: wrap;
+  overflow-wrap: anywhere;
+
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px var(--clr);
+  color: white;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Rotating neon ring */
+.start-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #00c8ff00 60deg,
+    var(--clr) 90deg,
+    #4b4149e6 120deg,
+    #00c8ff00 160deg,
+    transparent 360deg
+  );
+  animation: spinBorder 2.4s linear infinite;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.start-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.start-button:hover::before {
+  animation-duration: 1.2s;
+  filter: blur(2px);
+}
+
+.start-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.start-button:active {
+  transform: scale(0.96);
+}
+
+rain {
+  display: block;
+}
+
+.neonText {
+  color: var(--clr);
+  text-shadow:
+    0 0 8px var(--clr),
+    0 0 34px var(--clr);
+  font-weight: 800;
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.hero-img {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: auto;
+  height: 30vh;
+  transform: translate(-50%, -50%) scaleX(-1);
+  z-index: 10;
+  transition: transform 0.7s ease-in-out;
+}
+
+.hero-img:hover {
+  transform: translate(-50%, -50%) scaleX(-1) rotate(45deg);
+}
+
+
+/***************************/
+/* MARK: PAGE 2 - PANEL UI */
+/***************************/
+
 .panel {
   width: 80vw;
+  max-height: 90vh;
   padding: 2.5rem;
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -456,6 +417,7 @@ h1 {
   border: 1px solid var(--border);
   background: rgba(0, 0, 0, 0.35);
   text-wrap: wrap;
+  overflow-wrap: anywhere;
 }
 
 .card-wide {
@@ -482,42 +444,49 @@ h1 {
   text-decoration: underline;
 }
 
-.two-col {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
+/* Player search field */
+.player-id-input {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.sub {
-  margin: 0 0 0.75rem;
-  opacity: 0.9;
+.player-id-input input {
+  width: 120px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--clr);
 }
 
-.skill-list {
-  list-style: none;
-  padding: 0;
+.player-id-input input:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+}
+
+.id-error {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: #ff6b6b;
+}
+
+/* Spinner buttons in number input verbergen */
+.player-id-input input[type="number"]::-webkit-outer-spin-button,
+.player-id-input input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
 }
 
-.skill-list li {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  padding: 0.35rem 0;
+.player-id-input input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--clr);
-  box-shadow: 0 0 12px var(--clr);
-}
-
+/* Buttons */
 .btn {
   display: inline-block;
-
   padding: 0.5rem 0.75rem;
   border-radius: 14px;
   border: 1px solid var(--border);
@@ -525,79 +494,88 @@ h1 {
   color: var(--clr);
   background: rgba(0, 200, 255, 0.08);
 }
+
 .btn:hover {
   background: rgba(0, 200, 255, 0.18);
 }
+
 .btn.ghost {
   background: transparent;
   opacity: 0.9;
 }
 
-/*********************/
-/* RESPONSIVE TWEAKS */
-/*********************/
-@media (max-width: 888px) {
-  .outer-wrapper {
-    height: 100vh;
-    width: 100vw;
-    transform: none; /* easiest mobile fallback */
-    position: relative;
-  }
-
-  .wrapper {
-    width: 300vw;
-    transform: none;
-  }
-
-  /* On mobile fallback: slides become normal horizontal scrolling */
-  .outer-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
-
-  .wrapper {
-    display: inline-flex;
-  }
+.empty-state {
+  opacity: 1;
+  font-style: italic;
+  color: var(--clr);
 }
 
-@media (max-width: 640px) {
-  :root {
-    --grid-size: 36px;
-  }
-
-  #section-1 .grid {
-    transform: translateX(-50%) perspective(700px) rotateX(70deg);
-  }
-
-  #section-2 .grid {
-    transform: translateX(-50%) perspective(700px) rotateX(70deg);
-  }
-
-  #section-3 .grid {
-    transform: translateX(-50%) perspective(700px) rotateX(70deg);
-  }
+/*****************************/
+/* MARK: PAGE 3 - LEERDOELEN */
+/*****************************/
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-/**********************/
-/* TRON BOOT SEQUENCE */
-/**********************/
+.side-to-side {
+  display: flex;
+}
 
+/* Disc image in panel */
+.panel img {
+  max-height: auto;
+  width: 7rem;
+  animation: rotate 2s linear infinite;
+}
+
+/* Marquee */
+.marquee-wrap {
+  padding: 4rem 0px;
+  color: white;
+  overflow-x: hidden;
+}
+
+.marquee-text {
+  overflow: clip;
+}
+
+.marquee-text-track {
+  display: flex;
+  padding-left: 1rem;
+  gap: 1rem;
+  width: max-content;
+  animation: marquee-move-text 10s linear infinite;
+}
+
+.fadeout {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5rem,
+    black calc(100% - 5rem),
+    transparent
+  );
+}
+
+/*****************************/
+/* MARK: TRON BOOT + GLITCH  */
+/*****************************/
 .boot {
   position: relative;
   display: inline-block;
   overflow: hidden;
   padding: 0.15em 0.25em;
-}
 
-/* Type-in effect: onthult de tekst */
-.boot {
+  /* reveal */
   --reveal: 0%;
   clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
-  animation: bootReveal 1.3s ease-out forwards;
+  animation:
+    bootReveal 1.3s ease-out forwards,
+    bootFlicker 2.8s ease-in-out infinite 1.3s;
 }
 
-/* Scanline die tijdens boot over de tekst gaat */
+/* scanline */
 .boot::after {
   content: "";
   position: absolute;
@@ -618,26 +596,14 @@ h1 {
   pointer-events: none;
 }
 
-/* Subtiele “boot flicker” op de glow */
-.boot {
-  animation:
-    bootReveal 1.3s ease-out forwards,
-    bootFlicker 2.8s ease-in-out infinite 1.3s; /* start na boot */
-}
-
-/* === CONTINUE GLITCH (altijd aan) === */
+/* continue glitch */
 .glitch {
   text-shadow:
     0 0 8px var(--clr),
     0 0 34px var(--clr);
 }
 
-/* 2 kopieën van de tekst via data-text */
-.glitch::before,
-.glitch::marker {
-  content: "";
-} /* no-op, helpt niets maar laat met rust */
-
+/* 2 kopieën via data-text */
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
@@ -653,17 +619,71 @@ h1 {
 .glitch::before {
   transform: translate(2px, 0);
   filter: drop-shadow(0 0 12px var(--accent));
-  animation: glitchA 2.2s linear infinite 1.3s; /* start na boot */
+  animation: glitchA 2.2s linear infinite 1.3s;
 }
 
 /* magenta laag */
 .glitch::after {
   transform: translate(-2px, 0);
   filter: drop-shadow(0 0 10px var(--accent));
-  animation: glitchB 2.8s linear infinite 1.3s reverse; /* start na boot */
+  animation: glitchB 2.8s linear infinite 1.3s reverse;
 }
 
-/* Keyframes */
+
+/***************************/
+/* MARK: RESPONSIVE TWEAKS */
+/***************************/
+
+@media (max-height: 850px) {
+  .game-board {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 650px) {
+  .game-board {
+    font-size: 8px;
+  }
+}
+
+
+/*********************/
+/* MARK: KEYFRAMES   */
+/*********************/
+@keyframes spinBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes bootReveal {
   0% {
     --reveal: 0%;
@@ -702,7 +722,6 @@ h1 {
   }
 }
 
-/* Glitch: clip-path “snijdt” stroken uit de kopieën */
 @keyframes glitchA {
   0% {
     clip-path: inset(80% 0 10% 0);
@@ -787,116 +806,4 @@ h1 {
     clip-path: inset(10% 0 80% 0);
     transform: translate(-2px, 0);
   }
-}
-
-/* Respecteer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .boot,
-  .boot::after,
-  .glitch::before,
-  .glitch::after {
-    animation: none;
-  }
-  .boot {
-    clip-path: none;
-  }
-}
-
-/***********************/
-/* PLAYER SEARCH FIELD */
-/***********************/
-
-.player-id-input {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.player-id-input input {
-  width: 120px;
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.4);
-  color: var(--clr);
-}
-
-.player-id-input input:focus {
-  outline: none;
-  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
-}
-
-.id-error {
-  margin-left: 0.5rem;
-  font-size: 0.85rem;
-  color: #ff6b6b;
-}
-
-/* 
-ChatGPT prompt link: https://chatgpt.com/share/6989d635-a57c-800a-b06b-9603f5a38012
-*/
-
-/* Verstoppen van spinner buttons in inputveld */
-.player-id-input input[type="number"]::-webkit-outer-spin-button,
-.player-id-input input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.player-id-input input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-.player {
-  display: flex;
-  position: relative;
-  align-items: center;
-  gap: 1rem;
-}
-
-#toggle {
-  width: 3rem;
-  height: 3rem;
-  border: var(--clr) solid 2px;
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  color: var(--clr);
-  background:
-    radial-gradient(
-      1200px 600px at 50% 30%,
-      rgba(0, 247, 255, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 60% 60%,
-      rgba(255, 43, 214, 0.06),
-      transparent 60%
-    ),
-    var(--bg);
-}
-
-/****************/
-/* PAGE 3 DISCS */
-/****************/
-
-.panel img {
-  max-height: auto;
-  width: 7rem;
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.img-wrapper {
-  display: flex;
-  flex-direction: column;
 }

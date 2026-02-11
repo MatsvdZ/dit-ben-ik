@@ -1,3 +1,11 @@
+/* 
+BRONEN: 
+ChatGPT
+https://chatgpt.com/share/698c86eb-3034-800a-af21-2154e2bb145d
+
+https://medium.com/@noransaber685/mastering-asynchronous-javascript-from-fetch-to-async-await-a-comprehensive-guide-2fd01a2531b7
+ */
+
 /****************/
 /* MARK: CONFIG */
 /****************/
@@ -121,10 +129,18 @@ function renderPlayer(player) {
     const key = el.dataset.field;
     const value = player[key];
 
-    if (!value) {
-      el.textContent = "";
+    // Check op echt lege waarde
+    if (
+      value === null ||
+      value === undefined ||
+      (typeof value === "string" && value.trim() === "")
+    ) {
+      el.textContent = "Uhh, hier staat niets";
+      el.classList.add("empty-state"); // optioneel voor styling
       return;
     }
+
+    el.classList.remove("empty-state");
 
     if (el.tagName === "A") {
       el.textContent = value;
@@ -194,7 +210,6 @@ document.querySelector(".start-button")?.addEventListener("click", () => {
   });
 });
 
-
 /***************/
 /* MARK: START */
 /***************/
@@ -203,7 +218,6 @@ getInfo();
 
 const audio = document.getElementById("audio");
 const toggle = document.getElementById("toggle");
-
 
 // Play/pause knop
 toggle.addEventListener("click", async () => {
