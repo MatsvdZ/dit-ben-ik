@@ -14,7 +14,7 @@ Ik ga morgen gewoon lekker beginnen met mijn project coderen. Ik wil in ieder ge
 
 ## Tweede checkout (04-02)
 
-### Wat heb ik gedaan?
+### Wat heb ik vandaag gedaan?
 We hebben vandaag workshops gehad. Ik heb meegedaan met de workshops over scroll driven animations en de workshop over endpoints/custom JSON.
 
 Ik heb daarna gewerkt aan het werkend maken van de API. Deze is nu werkend op mijn site, en ik kan nu al mijn data inladen.
@@ -34,7 +34,7 @@ Ik ga morgen beginnen met het verder coderen en oefenen met het laten bewegen va
 
 ## Derde checkout (05-02)
 
-### Wat heb ik gedaan?
+### Wat heb ik vandaag gedaan?
 Ik heb een start gemaakt met het echt vormgeven van mijn site. 
 
 Ik heb hem horizontaal scrollbaar gemaakt, en een backgrond toegevoegd die soepel in elkaar overloopt, wat een soort continu effect geeft aan de achtergrond.
@@ -93,7 +93,7 @@ Dus kort samengevat heb ik deze week:
 
 ## Vierde checkout (09-02)
 
-### Wat heb ik gedaan?
+### Wat heb ik vandaag gedaan?
 Ik heb vandaag gewerkt aan veel verschillende dingen. Ik begon met het toevoegen van leuke effecten op mijn tekst op mijn beginscherm. Ik heb een glitch effect toegevoegd wat natuurlijk past bij de tron vibe waar ik voor ga. Ook heb ik de 'Ready to ride' knop een leuke roterende animatie gegeven. Daarnaast heb ik ook het pulse effect sterker gemaakt, zodat dit lekker opvalt.
 
 Ik heb ook mijn motor een hover animatie gegeven waardoor deze een wheelie doet wanneer je erover hovert.
@@ -117,7 +117,7 @@ Ik wil morgen een andere font gaan gebruiken, om deze wat meer bij mijn idee te 
 
 ## Vijfde checkout (10-02)
 
-### Wat heb ik gedaan?
+### Wat heb ik vandaag gedaan?
 Ik heb een redelijk stuk gedaan vandaag. Ik had een paar probelemen die ik op moest lossen, en dat heb ik gedaan, samen ook met de hulp van Vasilis. 
 
 Ik heb ook eindelijk een passend lettertype toegevoegd, en deze werkt ook echt op de live versie van de site.
@@ -140,11 +140,55 @@ Vandaag heb ik niet persé echt veel geleerd, want ik heb vandaag veel gefinetun
 Ik ga kijken of het lukt met het toevoegen van een soort light en dark mode maken. Ook ga ik mijn leerdoel pagina afmaken en alles volledig responsive maken.
 
 
+## Voortgang week 2
 
-<img width="712" height="852" alt="Screenshot 2026-02-04 at 15 33 25" src="https://github.com/user-attachments/assets/c4a26417-743a-48b4-8876-7aa7252ebd21" />
+### Wat heb ik vandaag gedaan?
+Ik heb mijn ontwerp ten opzichte van vorige week mooi aangepakt en alle eisen weten toe te voegen. Ik heb een soort light/dark mode toegevoegd die de mooie blauwe Tron omgeving omtovert tot een rode, wat meer duistere omgeving. Dit ziet er als volgt uit:
+
+<img width="1277" height="963" alt="Screenshot 2026-02-11 at 16 25 41" src="https://github.com/user-attachments/assets/45f8aaec-481f-4a31-8fa7-4e627e8cb99a" />
+
+<img width="1276" height="963" alt="Screenshot 2026-02-11 at 16 25 51" src="https://github.com/user-attachments/assets/063956da-d7ff-4af9-a66e-c604c2598c81" />
+
+<img width="499" height="178" alt="Screenshot 2026-02-11 at 16 27 53" src="https://github.com/user-attachments/assets/cf67f335-0a9e-4597-b65d-c993a1df8606" />
+
+<img width="1276" height="962" alt="Screenshot 2026-02-11 at 16 29 54" src="https://github.com/user-attachments/assets/75c684f9-2ded-4432-b63a-3e8246ebec89" />
+
+<img width="1274" height="963" alt="Screenshot 2026-02-11 at 16 30 06" src="https://github.com/user-attachments/assets/751f05a3-4c2f-4b1f-b0bc-fc7ade7e31fe" />
+
+Ik heb op de laatste dag veel werk gestopt in het responsive maken van mijn site. Deze is nu dus goed te gebruiken op verschillende apparaten. Dit heb ik aan de hand van verschillende mediaqueries gedaan:
+
+<img width="312" height="969" alt="Screenshot 2026-02-11 at 16 32 11" src="https://github.com/user-attachments/assets/c1055e92-64c2-4145-b94e-1c3c658e3203" />
+
+Daarnaast heb ik op deze laatste dag een marquee tekst toegevoegd, die ervoor zorgt dat op mijn leerdoelen pagina, de tekst als het ware langs scrollt en verdwijnt in de trondisc die ernaast staat. Deze heb ik ook een constante rotatie gegeven, gewoon omdat het kan.
+
+<img width="532" height="849" alt="Screenshot 2026-02-11 at 16 36 29" src="https://github.com/user-attachments/assets/497b98ca-8fd1-4459-a6e3-f1e874fed714" />
+
+Om echt de putjes op de i te zetten heb ik nog veel bronnen en comments in mijn code gezet, maar ook mijn hele CSS geordend zodat deze ongeveer overeenkomt met mijn HTML structuur.
+
+Ik heb samen met een andere student naar elkaars code gekeken en ook naar de code conventions die FDND heeft opgesteld. Hier kwam ik erachter dat ik eigenlijk al echt goed bezig ben geweest, en vooral consistent.
 
 
+### Hoe lang duurde het?
+Ik heb vandaag zo'n 4 uur echt goed gewerkt aan mijn site, ik heb er nog wel langer aan gezeten, maar dit waren vaak snelle losse regels code. 
 
+
+###  Wat heb ik geleerd?
+Ik heb vandaag veel geleerd. Ik heb geoefend met het stylen van een light en dark mode. Dit heb ik nog nooit eerder gedaan, en was eigenlijk best leuk om te doen. 
+
+Ik heb een marquee animatie gemaakt. Deze animatie vereist een beetje werk en is niet zo 1, 2, 3 gedaan, maar is erg grappig om te hebben.
+
+
+### Samengevat
+Hieronder staat in een lijstje even snel wat ik deze week (eigenlijk 3 dagen) dus allemaal heb gedaan:
+
+- Tekstanimaties
+- Animation on hover
+- Custom cursor
+- Muziek button
+- Meerdere mensen in kunnen laden via de API
+- Light/dark mode
+- Responsiveness
+- Codeconventions nagegaan
 
 
 
