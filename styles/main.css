@@ -368,7 +368,6 @@ https://prismic.io/blog/css-text-animations
 
 .start-button:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .start-button:active {
@@ -524,7 +523,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/numbe
 }
 
 .btn:hover {
-  background: rgba(0, 200, 255, 0.18);
+  background: var(clr);
 }
 
 .btn.ghost {
