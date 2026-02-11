@@ -151,23 +151,13 @@ Ik ga kijken of het lukt met het toevoegen van een soort light en dark mode make
 ## Bronnen
 https://medium.com/@noransaber685/mastering-asynchronous-javascript-from-fetch-to-async-await-a-comprehensive-guide-2fd01a2531b7
 
-https://stackoverflow.com/questions/27123399/how-to-move-an-image-up-and-down-smoothly-with-css
-
-https://codepen.io/Sidstumple/pen/LEZdEWP?editors=1100
-
-https://codepen.io/Sidstumple/pen/emzWNRo
-
-https://stackoverflow.com/questions/36060354/how-to-flip-an-image-horizontally-halfway-through-an-animation
-
 https://codepen.io/collection/EPWkPM
-
-https://www.youtube.com/watch?v=WRxUWqy1Wkw
 
 https://css-tricks.com/the-shapes-of-css/
 
 https://css-tricks.com/how-to-create-neon-text-with-css/
 
-https://www.youtube.com/watch?v=n-9drcPkpZg
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/mask-image
 
 https://www.youtube.com/watch?v=OeaHnxahf40
 
@@ -190,10 +180,6 @@ https://www.youtube.com/watch?v=J2BK1iBdkIA
 https://www.youtube.com/watch?v=uw5jVO1eNF8
 
 https://fonts.adobe.com/fonts/ethnocentric
-
-https://www.w3schools.com/html/html5_audio.asp
-
-https://www.w3schools.com/html/html_favicon.asp
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
 

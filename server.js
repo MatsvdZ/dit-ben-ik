@@ -1,9 +1,11 @@
 /* 
-BRONEN: 
+BRONNEN: 
 ChatGPT
 https://chatgpt.com/share/698c86eb-3034-800a-af21-2154e2bb145d
 
 https://medium.com/@noransaber685/mastering-asynchronous-javascript-from-fetch-to-async-await-a-comprehensive-guide-2fd01a2531b7
+
+https://stackoverflow.com/questions/40677764/how-to-fetch-data-over-multiple-pages
  */
 
 /****************/

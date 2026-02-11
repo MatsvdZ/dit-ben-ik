@@ -12,7 +12,11 @@
   --space-lg: 2rem;
   --radius-lg: 1rem;
 
-  /* Neon palette */
+  /* Color palette */
+  /*
+  Bron:
+  Sanne en https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
+  */
   color-scheme: light dark;
   --bg: #05060a;
 
@@ -21,7 +25,6 @@
   --border: light-dark(#00c8ff, #ff2b2b);
   --box-shadow: light-dark(#00c8ff, #ff2b2b);
 
-  /* Alias (je gebruikte --accent in .horizon + glitch filters) */
   --accent: var(--clr);
 
   /* TRON grid */
@@ -55,6 +58,7 @@ body {
   Prompt: Kan je een custom tron style svg cursor voor me maken?
   https://chatgpt.com/share/6989e4c0-1d7c-800a-adab-b0dd8cb4fa64 
 */
+
 @media (prefers-color-scheme: light) {
   body {
     cursor:
@@ -76,6 +80,11 @@ body {
 /****************************/
 /* MARK: SLIDES (ROTATED UI)*/
 /****************************/
+
+/* 
+Bron:
+https://www.youtube.com/watch?v=OeaHnxahf40
+*/
 
 .outer-wrapper {
   width: 100vh;
@@ -101,9 +110,10 @@ body {
   transform-origin: top left;
 }
 
-/********************/
+/*********************/
 /* MARK: SECTION BASE*/
-/********************/
+/*********************/
+
 section {
   position: relative;
   width: 100vw;
@@ -128,9 +138,16 @@ section {
     var(--bg);
 }
 
-/************************/
+/*************************/
 /* MARK: TRON SCENE GRID */
-/************************/
+/*************************/
+
+/*
+Bronnen:
+https://stackoverflow.com/questions/53416334/css-80s-tron-grid
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/mask-image
+*/
 
 section .scene {
   position: absolute;
@@ -214,10 +231,9 @@ section::before {
   z-index: 2;
 }
 
-
-/****************************/
-/* MARK: LAYERING (CONTENT) */
-/****************************/
+/******************/
+/* MARK: LAYERING */
+/******************/
 
 .panel,
 .game-board,
@@ -227,10 +243,9 @@ section::before {
   z-index: 5;
 }
 
-
-/********************************/
-/* MARK: PAGE 1 - PLAYER + BOARD*/
-/********************************/
+/*********************************/
+/* MARK: PAGE 1 - PLAYER + BOARD */
+/*********************************/
 
 .player {
   display: flex;
@@ -260,7 +275,6 @@ section::before {
     var(--bg);
 }
 
-/* Game board */
 .game-board {
   text-align: center;
   padding: 1rem 0.75rem;
@@ -278,8 +292,6 @@ section::before {
     0 0 2.8rem var(--clr),
     inset 0 0 1.3rem var(--clr);
   animation: pulse 3s ease-in-out infinite;
-
-  /* fallback voor text-wrap (nog niet overal) */
   text-wrap: wrap;
   overflow-wrap: anywhere;
 }
@@ -288,7 +300,6 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/* Button */
 .start-button {
   font-family: "ethnocentric", sans-serif;
   font-weight: 400;
@@ -310,13 +321,18 @@ h1 {
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
-
   position: relative;
   isolation: isolate;
   overflow: hidden;
 }
 
 /* Rotating neon ring */
+
+/*
+Bron:
+https://prismic.io/blog/css-text-animations
+*/
+
 .start-button::before {
   content: "";
   position: absolute;
@@ -363,6 +379,13 @@ rain {
   display: block;
 }
 
+/* Neon text */
+
+/*
+Bron:
+https://css-tricks.com/how-to-create-neon-text-with-css/
+*/
+
 .neonText {
   color: var(--clr);
   text-shadow:
@@ -387,7 +410,6 @@ rain {
 .hero-img:hover {
   transform: translate(-50%, -50%) scaleX(-1) rotate(45deg);
 }
-
 
 /***************************/
 /* MARK: PAGE 2 - PANEL UI */
@@ -447,6 +469,7 @@ rain {
 /* Player search field */
 .player-id-input {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
   margin-bottom: 1rem;
@@ -472,7 +495,12 @@ rain {
   color: #ff6b6b;
 }
 
-/* Spinner buttons in number input verbergen */
+/*
+Bron: 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number
+*/
+
+/* Hide spinner buttons */
 .player-id-input input[type="number"]::-webkit-outer-spin-button,
 .player-id-input input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -530,6 +558,12 @@ rain {
 }
 
 /* Marquee */
+
+/*
+Bron: 
+https://www.youtube.com/watch?v=uw5jVO1eNF8
+*/
+
 .marquee-wrap {
   padding: 4rem 0px;
   color: white;
@@ -567,7 +601,6 @@ rain {
   overflow: hidden;
   padding: 0.15em 0.25em;
 
-  /* reveal */
   --reveal: 0%;
   clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
   animation:
@@ -583,27 +616,21 @@ rain {
   top: 0;
   width: 120%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 200, 255, 0.9),
-    transparent
-  );
-  box-shadow: 0 0 18px rgba(0, 200, 255, 0.65);
+  background: linear-gradient(90deg, transparent, var(--clr), transparent);
+  box-shadow: 0 0 18px var(--clr);
   opacity: 0;
   transform: translateY(-30%);
   animation: scanline 1.3s ease-out forwards;
   pointer-events: none;
 }
 
-/* continue glitch */
 .glitch {
   text-shadow:
     0 0 8px var(--clr),
     0 0 34px var(--clr);
 }
 
-/* 2 kopieën via data-text */
+/* Copy via data-text */
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
@@ -615,20 +642,17 @@ rain {
   opacity: 0.9;
 }
 
-/* cyan laag */
 .glitch::before {
   transform: translate(2px, 0);
   filter: drop-shadow(0 0 12px var(--accent));
   animation: glitchA 2.2s linear infinite 1.3s;
 }
 
-/* magenta laag */
 .glitch::after {
   transform: translate(-2px, 0);
   filter: drop-shadow(0 0 10px var(--accent));
   animation: glitchB 2.8s linear infinite 1.3s reverse;
 }
-
 
 /***************************/
 /* MARK: RESPONSIVE TWEAKS */
@@ -638,18 +662,42 @@ rain {
   .game-board {
     font-size: 12px;
   }
-}
 
-@media (max-height: 650px) {
-  .game-board {
-    font-size: 8px;
+  .panel {
+    font-size: 14px;
+  }
+
+  .value {
+    font-size: 10px;
   }
 }
 
+@media (max-height: 700px) {
+  .game-board {
+    font-size: 10px;
+  }
 
-/*********************/
-/* MARK: KEYFRAMES   */
-/*********************/
+  .panel {
+    font-size: 12px;
+  }
+
+  .value {
+    font-size: 10px;
+  }
+
+  .cards {
+    gap: 0.5rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+}
+
+/*******************/
+/* MARK: KEYFRAMES */
+/*******************/
+
 @keyframes spinBorder {
   from {
     transform: rotate(0deg);
