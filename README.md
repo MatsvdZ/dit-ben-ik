@@ -4,6 +4,11 @@ Mijn eerste site voor de minor Web Design & Development Waarin ik meer laat zien
 Link naar live site: https://matsvdz.github.io/dit-ben-ik/
 
 
+## Leerdoelen
+- Goed fundament maken voordat ik begin met coderen sites d.m.v. schetsen en ideegeneratie (Conceptualiseren)
+- Meer in detail gaan met het ontwerp, en dus mezelf uitdagen door bijvoorbeeld veel gebruik van beweging/animaties (Vormgeving/interactie)
+- Samenwerken met andere studenten om op moderne oplossingen te gebruiken (Samenwerken)
+
 ## Eerste checkout (03-02)
 
 Het eerste check-out gesprekje was omdat het de eerste les was, erg kort, maar krachtig. Eigenlijk werd er gevraagd hoe we er nu voor staan en of alles duidelijk is. Dit was gelukkig zo. We kregen als tip mee om gewoon lekker te beginnen, en vooral niet te groot te beginnen. Je kunt altijd later nog uitbreiden als hier tijd voor is.
