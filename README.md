@@ -62,6 +62,163 @@ Ik ga morgen voor de eerste versie presentaties, nog een paar kleine details toe
 Ik wil alvast wat meer van de data over mijzelf op de pagina tonen, en ik wil kijken of ik de knop alvast werkend kan maken.
 
 
+## Weekly Nerd notities
+
+###Kilian Valkhof
+
+**Stop using JS for that.**
+Moving features from JS to CSS & HTML.
+
+Polypane helpt bij het maken van responsive designs.
+
+The rule of least power. Bedacht door W3C. Choose the least powerful language suitable for a given purpose.
+
+HTML en CSS zijn declaratief. Je bepaalt wat het eindproduct wordt, en de browser regelt de rest.
+
+Browser makers are listening. And are implementing the stuff we built by hand.
+
+Als je iets hebt geschreven, blijft het altijd werken in de browser, het is backwards compatible.
+
+Ik weet nu hoe het moet, maar moet het de volgende keer nog steeds zo, of is er een nieuwe en betere manier?
+
+
+**Custom switches**
+
+We krijgen uitleg over hoe je een checkbox kan stylen en wat je daarvoor kan gebruiken.
+
+<label>
+	<input type="checkbox” />
+		My awesome feature
+	</label>
+
+**CSS:**
+
+Input {
+	appearance: none;  Ik wil niet dat dit gestyld wordt als vorm element, ik wil er zelf wat mee doen.
+}
+
+
+:checked {
+	 background: green; :checked pseudo element zorgt dat de achtergrond verandert van kleur
+}
+
+:checked :before {
+	 transform: translateX (1rem); 
+}
+
+
+Input:focus-visible {
+	outline: 2px solid dodgerblue; 
+	outline-offset: 2px;
+}
+
+input:focus {
+	Outline: none; 
+	Outline-color: transparent;
+}
+
+
+In-page transitions
+
+Html {
+	scroll-behavior: smooth;
+}
+
+Zorgt dat als je naar een ander deel van de pagina scrollt, dit gebeurt met een smooth animatie.
+
+
+
+@media
+	(
+		prefers-reduced-motion:
+			no-preference
+	) {
+		html {
+		scroll-behavior: smooth;
+	}
+}
+
+Op deze manier kunnen mensen die de setting aan hebben staan gewoon nog steeds je site gebruiken zonder dat ze hier last hebben van animaties
+
+
+#my-target {
+	scroll-margin-top: 100px;
+}
+
+Je kan met scroll margin aangeven hoeveel een element van de bovenkant staat.
+
+
+
+#my-target:target {
+	outline: 10px solid deeppink;
+	transition: 2s ease-in-out outline;
+}
+
+Nu kun je tekst een target geven, dit zorgt dat hij naar een interne link gaat op je pagina
+
+
+
+**Accordions and models**
+
+Accordion kan je helpen met je webpagina georganiseerd houden
+
+Als je een detail/summary element toevoegt, wordt de inhoud automatisch verstopt.
+
+
+<details open>
+	<summary>Here is my title</summary>
+	<p>tekst</p>
+</details>
+
+Dit stukje zorgt ervoor dat je eerste tekststukje altijd open staat wanneer je het tegenkomt. Een open attribuut is een live attribuut.
+
+
+Summary::marker {
+	font-size: 1.5em;
+	content: “emoji”;
+}
+
+[open] summary::marker {
+	content: “”emoji
+
+
+
+
+Summary::hover {
+	cursor: pointer;
+	background: deeppink;
+}
+
+Zorgt dat je een pijltje krijgt wanneer je ergens over hovert. 
+
+
+
+**Dialog**
+
+<dialog>
+	<form method="dialog”>
+		<h1>tekst</h1>
+		<button type="submit”>Close</button>
+	</form>
+</dialog>
+
+Top layer is nieuw, dit is een soort laagje tussen jouw site en jouw scherm. Dit wil je, zo blijft jouw element altijd bovenaan te staan. Zorgt voor een plek boven jouw pagina speciaal voor jouw elementen.
+
+
+
+
+Input,
+Textarea {
+
+Field-sizing: content;
+}
+
+Fieldsizing  zorgt dat de grootte van een textarea door de inhoud wordt bepaald.
+
+
+Een picker is het dropdown pijltje.
+
+
 
 ## Voortgang week 1
 
