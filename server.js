@@ -21,7 +21,7 @@ const PAGE_LIMIT = 100;
 /***************/
 
 let players = [];
-let currentIndex = 0;
+let currentIndex = 0; // Houdt bij welke speler in de players array nu getoond wordt. 
 
 /*************************/
 /* MARK: FETCH ALL PAGES */
@@ -30,15 +30,15 @@ let currentIndex = 0;
 async function fetchAllPlayers() {
   let allPlayers = [];
   let offset = 0;
-  let hasMore = true;
+  let hasMore = true; // Om te weten of ik nog een extra request moet doen. 
 
   try {
-    while (hasMore) {
+    while (hasMore) { // Zolang er meer data is, blijf nieuwe pagina’s ophalen. 
       const url = `${API_URL}?limit=${PAGE_LIMIT}&offset=${offset}`;
       const response = await fetch(url);
-      const { data } = await response.json();
+      const { data } = await response.json(); // Parset JSON response en haalt meteen de data property eruit (destructuring)
 
-      allPlayers.push(...data);
+      allPlayers.push(...data); // ...data spreidt de array uit zodat individuele items worden gepusht
       offset += PAGE_LIMIT;
 
       if (data.length < PAGE_LIMIT) {
@@ -66,14 +66,15 @@ async function getInfo() {
 
   // Zoek start-ID
   const startIndex = players.findIndex(
-    (p) => Number(p.id) === Number(START_PLAYER_ID),
+    (p) => Number(p.id) === Number(START_PLAYER_ID), // Number(...) zorgt dat string/nummer allebei goed vergelijken.
   );
 
-  currentIndex = startIndex !== -1 ? startIndex : 0;
+  currentIndex = startIndex !== -1 ? startIndex : 0; // Als startIndex is gevonden gewoon daar beginnen, anders index 0.
 
-  showPlayer(currentIndex);
+  showPlayer(currentIndex); // toon in UI
 }
 
+// Error handling
 const errorEl = document.querySelector(".id-error");
 
 function showIdError(msg) {
@@ -109,7 +110,7 @@ idInput?.addEventListener("keydown", (e) => {
 /***********************/
 
 function showPlayerById(id) {
-  const index = players.findIndex((p) => Number(p.id) === Number(id));
+  const index = players.findIndex((p) => Number(p.id) === Number(id)); // Zoekt index van speler met dit ID.
 
   if (index === -1) {
     showIdError(`Geen speler gevonden met ID ${id}`);
@@ -128,8 +129,8 @@ function renderPlayer(player) {
   if (!player) return;
 
   document.querySelectorAll("[data-field]").forEach((el) => {
-    const key = el.dataset.field;
-    const value = player[key];
+    const key = el.dataset.field; // Leest welke property getoond moet worden, zoals "name".
+    const value = player[key]; // Haalt de waarde uit het player-object.
 
     // Check op echt lege waarde
     if (
@@ -144,7 +145,7 @@ function renderPlayer(player) {
 
     el.classList.remove("empty-state");
 
-    if (el.tagName === "A") {
+    if (el.tagName === "A") { // Voor de GitHub namen, naar juiste profiel.
       el.textContent = value;
       el.href = `https://github.com/${value}`;
     } else {
@@ -160,7 +161,7 @@ function renderPlayer(player) {
 /* MARK: PLAYER NAVIGATION */
 /***************************/
 
-function showPlayer(index) {
+function showPlayer(index) { // Hiermee veilig vooruit/achteruit navigeren
   currentIndex = (index + players.length) % players.length;
   renderPlayer(players[currentIndex]);
 }
@@ -180,7 +181,7 @@ function syncGlitchText() {
 function restartBoot() {
   if (!h1) return;
   h1.classList.remove("boot");
-  void h1.offsetWidth; // force reflow
+  void h1.offsetWidth; // reflow forceren (offsetWidth uitlezen)
   h1.classList.add("boot");
 }
 
@@ -188,13 +189,13 @@ function restartBoot() {
 /* MARK: MUTATION OBSERVER */
 /***************************/
 
-if (nameSpan) {
+if (nameSpan) { // Als nameSpan bestaat, maak observer die SyncGlitchText uitvoert bij wijzigingen.
   const obs = new MutationObserver(syncGlitchText);
   obs.observe(nameSpan, {
     childList: true,
     subtree: true,
     characterData: true,
-  });
+  }); // als de naam-text in de DOM verandert, wordt glitch-data automatisch bijgewerkt.
 }
 
 /***************************/
