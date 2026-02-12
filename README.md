@@ -1,6 +1,8 @@
 # Dit ben ik
 Mijn eerste site voor de minor Web Design & Development Waarin ik meer laat zien van mijzelf.
 
+Link naar live site: https://matsvdz.github.io/dit-ben-ik/
+
 
 ## Eerste checkout (03-02)
 
